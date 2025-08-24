@@ -23,12 +23,13 @@ The application is designed to run locally and can be accessed through your web 
 ## 📁 Project Structure
 
 ```
-DogBreedClassifier/
-├── app.py              # Main Gradio web application
-├── implementation.py    # PyTorch model implementation
-├── code.ipynb          # Jupyter notebook with training code
-├── requirements.txt     # Python dependencies
-└── README.md           # This file
+DogsClassifier/
+├── app.py                              # Main Gradio web application
+├── implementation.py                    # PyTorch model implementation
+├── code.ipynb                          # Jupyter notebook with training code
+├── requirements.txt                     # Python dependencies
+├── checkpoint_Efficent_B0_classes.pth  # Pre-trained model weights
+└── README.md                           # This file
 ```
 
 ## 🛠️ Installation
@@ -41,8 +42,8 @@ DogBreedClassifier/
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repository-url>
-   cd DogBreedClassifier
+   git clone https://github.com/Priyanshujindal/DogsClassifier.git
+   cd DogsClassifier
    ```
 
 2. **Install dependencies**
@@ -50,14 +51,10 @@ DogBreedClassifier/
    pip install -r requirements.txt
    ```
 
-3. **Download the dataset** (if you want to retrain)
-   - The model was trained on the Oxford-IIIT Pet Dataset
-   - Download from: [Oxford-IIIT Pet Dataset](https://www.robots.ox.ac.uk/~vgg/data/pets/)
-   - Extract to a `dataset/` folder
-
-4. **Download pre-trained model** (optional)
-   - Place your trained model checkpoint in the project directory
-   - Update the model path in `implementation.py` if needed
+3. **Ready to use!** 🎉
+   - The pre-trained model is already included
+   - No need to download additional files
+   - You can run the application immediately
 
 ## 🎯 Usage
 
@@ -101,6 +98,7 @@ print(f"Confidence: {confidence:.1f}%")
 - **Fine-tuning**: Custom classification head for dog breeds
 - **Input**: RGB images (224x224 pixels)
 - **Output**: Breed classification with confidence scores
+- **Pre-trained Weights**: Included in `checkpoint_Efficent_B0_classes.pth`
 
 ## 📊 Training
 
@@ -110,6 +108,8 @@ The model training code is available in `code.ipynb`:
 2. **Model Setup**: Initialize EfficientNet-B0 with custom classifier
 3. **Training Loop**: Fine-tune the model on dog breed data
 4. **Evaluation**: Assess model performance and save checkpoints
+
+**Note**: The included checkpoint file contains the trained model weights, so you can use the model immediately without retraining.
 
 ## 🔧 Configuration
 
@@ -129,6 +129,7 @@ The model training code is available in `code.ipynb`:
 - **Accuracy**: High accuracy on dog breed classification
 - **Speed**: Fast inference suitable for real-time applications
 - **Memory**: Efficient model size for deployment
+- **Ready to Use**: Pre-trained model included for immediate results
 
 ## 🎨 Customization
 
@@ -143,6 +144,7 @@ The web interface uses custom CSS for a professional look:
 - Easy to modify architecture in `implementation.py`
 - Configurable confidence thresholds
 - Extensible for additional breeds
+- Option to retrain using `code.ipynb`
 
 ## 🐛 Troubleshooting
 
@@ -159,6 +161,10 @@ The web interface uses custom CSS for a professional look:
 3. **Port Already in Use**
    - Change the port in `app.py`
    - Kill existing processes on port 7860
+
+4. **Model Loading Error**
+   - Ensure `checkpoint_Efficent_B0_classes.pth` is in the same directory
+   - Check file permissions
 
 ### Error Messages
 - **Low Confidence**: Upload a clearer, better-lit image
@@ -190,7 +196,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 If you encounter any issues or have questions:
-- Open an issue on GitHub
+- Open an issue on [GitHub](https://github.com/Priyanshujindal/DogsClassifier)
 - Check the troubleshooting section above
 - Review the code comments for implementation details
 
