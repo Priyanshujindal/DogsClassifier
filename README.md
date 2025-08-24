@@ -43,7 +43,6 @@ DogsClassifier/
 1. **Clone the repository**
    ```bash
    git clone https://github.com/Priyanshujindal/DogsClassifier.git
-   cd DogsClassifier
    ```
 
 2. **Install dependencies**
